@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
     tools:context=".WelcomeActivity">
 
     <TextView
@@ -44,6 +43,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
         app:cardBackgroundColor="?attr/colorPrimary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
+                android:background="@color/gray"
                 android:text="Create Account"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_welcome_login"
