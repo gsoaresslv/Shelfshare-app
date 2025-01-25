@@ -25,5 +25,6 @@ public class LauncherActivity extends AppCompatActivity {
         // DEFINIR VERIFICACAO DE LOGIN
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
+        finish();
     }
 }

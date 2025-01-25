@@ -3,6 +3,7 @@ package silva.guilherme.shelfshare;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,21 +25,19 @@ public class LoginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        EditText et_login_email = findViewById(R.id.et_login_email);
-        String login_email = et_login_email.toString();
-        EditText et_login_password = findViewById(R.id.et_login_password);
-        String login_password = et_login_password.toString();
-        if (!TextUtils.isEmpty(login_email) && !TextUtils.isEmpty(login_password)) {
-            // Se ambos os campos estiverem preenchidos
-            // Criar um Intent para iniciar a MainActivity
+        EditText et_login_email = findViewById(R.id.et_login_email); // Pega o campo de email
+        String str_login_email = et_login_email.toString(); // Converte o campo de email para string
+        EditText et_login_password = findViewById(R.id.et_login_password); // Pega o campo de senha
+        String str_login_password = et_login_password.toString(); // Converte o campo de senha para string
+        Button btn_login_send = findViewById(R.id.btn_login_send); // Pega o botão de login
+        btn_login_send.setOnClickListener(v -> { // Quando o botão de login for clicado:
+            if (!TextUtils.isEmpty(str_login_email) && !TextUtils.isEmpty(str_login_password)) { // Se todos os campos estiverem preenchidos
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
-            // Opcionalmente, você pode finalizar a Activity atual para que o usuário não possa voltar para a tela de login
             finish();
-
-        } else {
-            // Se qualquer campo estiver vazio ou nulo
+        } else { // Se qualquer campo estiver vazio ou nulo
             Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
+        });
     }
 }
