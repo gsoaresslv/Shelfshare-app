@@ -26,13 +26,11 @@ public class WelcomeActivity extends AppCompatActivity {
         btn_welcome_login.setOnClickListener(v -> { // Quando o botão de login for clicado:
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
-            finish();
         });
         Button btn_welcome_signup = findViewById(R.id.btn_welcome_signup); // Pega o botão de cadastro
         btn_welcome_signup.setOnClickListener(v -> { // Quando o botão de cadastro for clicado:
             Intent intent = new Intent(this, SignUpActivity.class);
             startActivity(intent);
-            finish();
         });
     }
 }
